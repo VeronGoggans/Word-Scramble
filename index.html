@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Word scramble</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    </style>
 </head>
 <body>
     <main class="container">
         <h1>Word Scramble</h1>
-        <p class="word">ppale</p>
-        <p class="hint">Hint: A fruit that invented gravity</p>
+        <p class="word"></p>
+        <p class="hint"></p>
+        <button class="show-word"><i class="fa-solid fa-info"></i></button>
         <input type="text" class="user-guess" placeholder="Make a guess">
         <div class="buttons">
             <button class="refresh">Refresh</button>
             <button class="check">Check</button>
         </div>
     </main>     
-    <script type="module" src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
