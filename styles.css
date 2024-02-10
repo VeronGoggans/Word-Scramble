@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    padding: 20px;
+    width: 450px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 200px rgb(101, 132, 255); */
+    border: 1px solid #ccc;
+}
+
+main h1 {
+    color: rgb(88, 88, 110);
+    border-bottom: 2px solid rgb(88, 88, 110);
+}
+
+main .word {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 20px;
+}
+
+main input {
+    outline: none;
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+    font-size: 20px;
+    border: none;
+    border-left: 5px solid #e8e8e8;
+    width: -webkit-fill-available;
+    height: 50px;
+    box-shadow: 0px 1px 10px #fff;
+    transition: .2s;
+}
+
+main input:focus {
+    box-shadow: 0px 1px 10px #ebebf6;
+    border-color: #e8e8e8;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.buttons .refresh {
+    cursor: pointer;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(101, 101, 122);
+    font-size: 16px;
+    color: white;
+    transition: .2s;
+}
+
+.buttons .check {
+    cursor: pointer;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(101, 132, 255);
+    font-size: 16px;
+    color: white;
+    transition: .2s;
+}
+
+.buttons .check:hover {
+    background-color: rgb(76, 112, 255);
+}
+
+.buttons .refresh:hover {
+    background-color: rgb(88, 88, 110);
+}
