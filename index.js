@@ -708,7 +708,7 @@ class Game {
     }
 
     check() {
-        if (this.wordToGuess.checkWord(this.userGuess.value)) {
+        if (this.wordToGuess.checkWord(this.userGuess.value.toLowerCase())) {
             alert('Correct')
             this.start();
         } else {
