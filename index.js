@@ -650,6 +650,90 @@ class Words {
                   {
                     "word": "ben10",
                     "hint": "An animated television series about a boy who acquires a powerful watch-like device that allows him to transform into various aliens."
+                  },
+                  {
+                    "word": "harrypotter",
+                    "hint": "A series of fantasy novels and films about a young wizard named Harry and his friends Hermione and Ron."
+                  },
+                  {
+                    "word": "starwars",
+                    "hint": "A space opera franchise created by George Lucas, featuring iconic characters like Luke Skywalker and Darth Vader."
+                  },
+                  {
+                    "word": "thelionking",
+                    "hint": "An animated Disney movie about a young lion named Simba and his journey to become king of the Pride Lands."
+                  },
+                  {
+                    "word": "jurassicpark",
+                    "hint": "A science fiction adventure film directed by Steven Spielberg, featuring genetically recreated dinosaurs."
+                  },
+                  {
+                    "word": "titanic",
+                    "hint": "A romantic disaster film directed by James Cameron, based on the sinking of the RMS Titanic."
+                  },
+                  {
+                    "word": "avengers",
+                    "hint": "A superhero film series produced by Marvel Studios, featuring iconic characters like Iron Man, Captain America, and Thor."
+                  },
+                  {
+                    "word": "frozen",
+                    "hint": "An animated Disney movie featuring two royal sisters, Elsa and Anna, and their icy adventures."
+                  },
+                  {
+                    "word": "inception",
+                    "hint": "A science fiction action film directed by Christopher Nolan, exploring the concept of shared dreaming."
+                  },
+                  {
+                    "word": "jaws",
+                    "hint": "A thriller film directed by Steven Spielberg, featuring a giant man-eating shark terrorizing a beach town."
+                  },
+                  {
+                    "word": "forrestgump",
+                    "hint": "A drama film directed by Robert Zemeckis, featuring the life story of a man named Forrest Gump."
+                  },
+                  {
+                    "word": "matrix",
+                    "hint": "A science fiction action film directed by the Wachowskis, exploring the concept of simulated reality."
+                  },
+                  {
+                    "word": "avatar",
+                    "hint": "A science fiction film directed by James Cameron, set on the fictional planet of Pandora."
+                  },
+                  {
+                    "word": "findingnemo",
+                    "hint": "An animated Disney film about a clownfish named Marlin searching for his son Nemo."
+                  },
+                  {
+                    "word": "shawshank",
+                    "hint": "A drama film directed by Frank Darabont, based on a Stephen King novella about a man wrongfully convicted of murder."
+                  },
+                  {
+                    "word": "gladiator",
+                    "hint": "An epic historical drama film directed by Ridley Scott, starring Russell Crowe as a Roman general seeking revenge."
+                  },
+                  {
+                    "word": "braveheart",
+                    "hint": "An epic war film directed by Mel Gibson, portraying the life of Scottish warrior William Wallace."
+                  },
+                  {
+                    "word": "pulpfiction",
+                    "hint": "A crime film directed by Quentin Tarantino, known for its nonlinear narrative and eclectic dialogue."
+                  },
+                  {
+                    "word": "forrestgump",
+                    "hint": "A drama film directed by Robert Zemeckis, featuring the life story of a man named Forrest Gump."
+                  },
+                  {
+                    "word": "matrix",
+                    "hint": "A science fiction action film directed by the Wachowskis, exploring the concept of simulated reality."
+                  },
+                  {
+                    "word": "lionking",
+                    "hint": "An animated Disney movie about a young lion named Simba and his journey to become king of the Pride Lands."
+                  },
+                  {
+                    "word": "godfather",
+                    "hint": "A crime film directed by Francis Ford Coppola, based on the novel of the same name by Mario Puzo."
                   }
           ]
     }
@@ -684,6 +768,7 @@ class Game {
         this.checkBtn = document.querySelector('.check');
         this.showBtn = document.querySelector('.show-word');
         this.userGuess = document.querySelector('.user-guess');
+        this.score = document.querySelector('.score');
         this.words = new Words();
         this.wordToGuess = null;
         this.attachEventlisteners();
@@ -709,15 +794,30 @@ class Game {
 
     check() {
         if (this.wordToGuess.checkWord(this.userGuess.value.toLowerCase())) {
-            alert('Correct')
+            alert('Correct'); 
+            this.incrementScore();
             this.start();
         } else {
             alert('Wrong')
+            this.decrementScore();
         }
     }
 
+    incrementScore() {
+      let currentScore = parseInt(this.score.textContent);
+      this.score.textContent = currentScore += 1;
+    }
+
+    decrementScore() {
+      let currentScore = parseInt(this.score.textContent);
+      if (currentScore > 0) {
+        this.score.textContent = currentScore -= 1;
+      }
+    }
+
     show() {
-        this.wordParagrapgh.textContent = this.wordToGuess.getWord();
+      this.decrementScore();
+      this.wordParagrapgh.textContent = this.wordToGuess.getWord();
     }
 
     shuffleWord(word) {

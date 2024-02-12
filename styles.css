@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     height: 100dvh;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,4 +99,15 @@ main .show-word {
 
 .buttons .refresh:hover {
     background-color: rgb(88, 88, 110);
+}
+
+.score-board {
+    margin-top: 10px;
+    color: rgb(101, 101, 122);
+    font-size: 30px;
+}
+
+.score {
+    color: rgb(101, 101, 122);
+    font-size: 50px;
 }
